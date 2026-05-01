@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dental Implants | Jewel Dental — Schaumburg, IL</title>
+  <meta name="description" content="Individual dental implants, All-on-4 Teeth in a Day, Diamond Bridge and Snap-on-4 dentures at Jewel Dental in Schaumburg, IL. Before & after case studies." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          navy: { DEFAULT: '#0B2244', 50: '#EEF2F9', 600: '#1A3A6E' },
+          gold: { DEFAULT: '#C9A84C', light: '#E5CC8A', dark: '#A07C28' },
+          cream: '#FAFAF7',
+        },
+        fontFamily: { serif: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #FAFAF7; color: #0B2244; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+    #navbar { transition: all 0.3s ease; }
+    .fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .before-after { position:relative; }
+    .before-after .label { position:absolute; top:12px; left:12px; background:rgba(11,34,68,0.85); color:#fff; font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; letter-spacing:.05em; text-transform:uppercase; }
+    @media (prefers-reduced-motion:reduce) { .fade-in { opacity:1; transform:none; transition:none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-navy/97 backdrop-blur-sm shadow-lg">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="2.5" stroke-linecap="round"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+      </div>
+      <span class="text-white font-serif text-xl font-semibold tracking-wide">Jewel Dental</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html"        class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Home</a>
+      <a href="services.html"     class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Services</a>
+      <a href="implants.html"     class="text-gold text-sm font-medium border-b border-gold pb-0.5">Implants</a>
+      <a href="testimonials.html" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Reviews</a>
+      <a href="contact.html"      class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Contact</a>
+    </div>
+    <a href="tel:2243331113" class="hidden md:flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67 2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 13.92v3z"/></svg>
+      (224) 333-1113
+    </a>
+    <button id="menu-btn" class="md:hidden text-white p-2 cursor-pointer" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/20">
+    <div class="flex flex-col gap-4 pt-4 px-2">
+      <a href="index.html" class="text-white/80 text-sm font-medium">Home</a>
+      <a href="services.html" class="text-white/80 text-sm font-medium">Services</a>
+      <a href="implants.html" class="text-gold text-sm font-medium">Implants</a>
+      <a href="testimonials.html" class="text-white/80 text-sm font-medium">Reviews</a>
+      <a href="contact.html" class="text-white/80 text-sm font-medium">Contact</a>
+      <a href="tel:2243331113" class="bg-gold text-navy font-semibold text-sm px-5 py-3 rounded-full text-center">(224) 333-1113</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative pt-32 pb-20 px-6 bg-navy overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Our Specialty</p>
+        <h1 class="text-white text-5xl md:text-6xl font-serif font-semibold leading-tight mb-6">
+          Complete Smile<br /><span class="text-gold italic">Transformations</span>
+        </h1>
+        <p class="text-white/65 text-lg leading-relaxed mb-8">
+          Dr. Victor Sanz performs both the implant surgery and the crown — fewer referrals, lower cost, and complete continuity of care from one trusted doctor.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="contact.html" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-8 py-4 rounded-full transition-colors text-center cursor-pointer">
+            Book a Consultation
+          </a>
+          <a href="tel:2243331113" class="border border-white/30 hover:border-gold hover:text-gold text-white font-medium px-8 py-4 rounded-full transition-colors text-center cursor-pointer">
+            Call (224) 333-1113
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 text-center">
+          <div class="text-gold font-serif text-4xl font-semibold mb-1">1 Day</div>
+          <div class="text-white/65 text-sm">Full arch implants with All-on-4®</div>
+        </div>
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 text-center">
+          <div class="text-gold font-serif text-4xl font-semibold mb-1">100%</div>
+          <div class="text-white/65 text-sm">Metal-free porcelain restorations</div>
+        </div>
+        <div class="bg-gold/15 border border-gold/30 rounded-2xl p-6 col-span-2 text-center">
+          <div class="text-gold font-serif text-2xl font-semibold mb-1">"Teeth in a Day"</div>
+          <div class="text-white/70 text-sm">Leave with a beautiful, complete smile the same day of surgery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLANT TYPES -->
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 fade-in">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Options</p>
+      <h2 class="text-navy text-4xl md:text-5xl font-serif font-semibold">Implant Solutions We Offer</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm fade-in">
+        <div class="w-12 h-12 bg-navy/8 rounded-xl flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a4 4 0 014 4v4a4 4 0 01-8 0V6a4 4 0 014-4z"/><path d="M8 14v8M16 14v8"/></svg>
+        </div>
+        <h3 class="text-navy text-xl font-serif font-semibold mb-3">All-on-4® "Teeth in a Day"</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Four strategically placed implants support a full arch of fixed teeth. You come in with failing or missing teeth and leave with a beautiful, functional smile — same day.</p>
+        <div class="text-gold text-xs font-medium">Best for: Full arch replacement</div>
+      </div>
+      <div class="bg-navy rounded-2xl p-8 fade-in">
+        <div class="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+        </div>
+        <h3 class="text-white text-xl font-serif font-semibold mb-3">Diamond Bridge</h3>
+        <p class="text-white/65 text-sm leading-relaxed mb-4">Our signature implant-supported porcelain bridge. Multiple missing teeth replaced with an elegantly crafted restoration that looks, feels, and functions like natural teeth.</p>
+        <div class="text-gold text-xs font-medium">Best for: Multiple missing teeth</div>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm fade-in">
+        <div class="w-12 h-12 bg-navy/8 rounded-xl flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="1.8" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <h3 class="text-navy text-xl font-serif font-semibold mb-3">Snap-on-4 Dentures</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Removable implant-supported dentures that snap securely onto four implants. Eliminates slipping and the need for adhesive while still being removable for easy cleaning.</p>
+        <div class="text-gold text-xs font-medium">Best for: Comfortable removable option</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER CASES -->
+<section class="py-20 px-6 bg-cream">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 fade-in">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Real Patient Results</p>
+      <h2 class="text-navy text-4xl md:text-5xl font-serif font-semibold">Before & After Cases</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto text-sm">Every case shown is a real Jewel Dental patient. Results may vary.</p>
+    </div>
+
+    <!-- Case 1 -->
+    <div class="mb-12 fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 1 — Bite Balancing</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_b5d0bc87ebc94fd798c898df18e65660~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 1 before bite balancing" class="w-full h-64 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_9d7fa6f0c2c1489496b036429c0fb6ff~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 1 after bite balancing" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="mb-12 fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 2 — Two Implants</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_42f80286f7e74d1cbbcc4255a95bfa7a~mv2_d_3264_2448_s_4_2.jpg"
+               alt="Case 2 before two implants" class="w-full h-64 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_642bb32126314f6391d9444bde884467~mv2_d_3264_2448_s_4_2.jpg"
+               alt="Case 2 after two implants" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="mb-12 fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 3 — Single Implant</h3>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_82333a9e768c4bb782c692ce71fec3c1~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 3 before" class="w-full h-56 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">During</span>
+          <img src="https://static.wixstatic.com/media/6b9715_7b906371b1d74243ad91c365fd59eec4~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 3 during" class="w-full h-56 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_5baa1479dbe14523974f46a14f1f6ec7~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 3 after" class="w-full h-56 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 4 -->
+    <div class="mb-12 fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 4 — Sinus Bone Grafting</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_0585f078631f471cbe24ee8c219ad108~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 4 before sinus grafting" class="w-full h-64 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_10f5ce39ee2a4fa7878bfb345213d453~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 4 after sinus grafting" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 5 -->
+    <div class="mb-12 fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 5 — Multiple Implants</h3>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_7d4335f54de1488586e34e1fa8534ec1~mv2_d_4032_3024_s_4_2.jpg"
+               alt="Case 5 before" class="w-full h-56 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">During</span>
+          <img src="https://static.wixstatic.com/media/6b9715_054da0af654e47c896e1378aab0db83d~mv2_d_4032_3024_s_4_2.jpg"
+               alt="Case 5 during" class="w-full h-56 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_556b706cacd145e0b66290ab96bf1bc1~mv2_d_4032_3024_s_4_2.jpg"
+               alt="Case 5 after" class="w-full h-56 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 6 -->
+    <div class="fade-in">
+      <h3 class="text-navy text-2xl font-serif font-semibold mb-6">Case 6 — Grafting with Healing</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label">Before</span>
+          <img src="https://static.wixstatic.com/media/6b9715_660dda642c774786b70b9c4b0068f95d~mv2.jpeg"
+               alt="Case 6 before grafting" class="w-full h-64 object-cover" />
+        </div>
+        <div class="before-after rounded-2xl overflow-hidden shadow-md">
+          <span class="label" style="background:rgba(201,168,76,0.9);color:#0B2244;">After</span>
+          <img src="https://static.wixstatic.com/media/6b9715_ed57574e06ce4499b06fdb20cbdbe1c2~mv2_d_2560_1440_s_2.jpg"
+               alt="Case 6 after grafting" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-6 bg-navy">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <h2 class="text-white text-4xl font-serif font-semibold mb-4">Ready to Restore Your Smile?</h2>
+    <p class="text-white/60 mb-8">Schedule a free implant consultation with Dr. Victor Sanz. We'll review your X-rays, discuss your options, and build a plan that fits your goals and budget.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold px-10 py-5 rounded-full text-lg transition-colors cursor-pointer">
+      Book a Free Consultation
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy border-t border-white/10 py-12 px-6 pb-24 md:pb-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="2.5" stroke-linecap="round"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+        </div>
+        <span class="text-white font-serif text-lg">Jewel Dental</span>
+      </div>
+      <div class="flex flex-wrap gap-6 text-sm text-white/50">
+        <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+        <a href="services.html" class="hover:text-gold transition-colors">Services</a>
+        <a href="implants.html" class="hover:text-gold transition-colors">Implants</a>
+        <a href="testimonials.html" class="hover:text-gold transition-colors">Reviews</a>
+        <a href="contact.html" class="hover:text-gold transition-colors">Contact</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-xs">
+      <div>© 2025 Jewel Dental. All rights reserved. Victor Sanz DDS · 1321 Tower Road Suite B, Schaumburg, IL 60173</div>
+      <div class="flex items-center gap-5">
+        <a href="tel:2243331113" class="hover:text-gold transition-colors">(224) 333-1113</a>
+        <a href="https://www.facebook.com/JewelDentalSchaumburg/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC9yBwh5tYnGxq8OldwCQJLQ" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0B2244"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-100 px-4 py-3 flex gap-3 shadow-lg">
+  <a href="tel:2243331113" class="flex-1 flex items-center justify-center gap-2 bg-navy text-white font-semibold text-sm py-3 rounded-xl">Call Now</a>
+  <a href="contact.html" class="flex-1 flex items-center justify-center gap-2 bg-gold text-navy font-semibold text-sm py-3 rounded-xl">Book Appointment</a>
+</div>
+
+<script>
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

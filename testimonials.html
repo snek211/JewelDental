@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Reviews & Results | Jewel Dental — Schaumburg, IL</title>
+  <meta name="description" content="Read real patient testimonials and view before & after photos from Jewel Dental in Schaumburg, IL. Dental implants, veneers, whitening and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          navy: { DEFAULT: '#0B2244', 50: '#EEF2F9', 600: '#1A3A6E' },
+          gold: { DEFAULT: '#C9A84C', light: '#E5CC8A', dark: '#A07C28' },
+          cream: '#FAFAF7',
+        },
+        fontFamily: { serif: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #FAFAF7; color: #0B2244; }
+    h1,h2,h3 { font-family: 'Cormorant Garamond', serif; }
+    .fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .photo-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .photo-card:hover { transform: scale(1.02); box-shadow: 0 20px 48px rgba(11,34,68,0.15); }
+    @media (prefers-reduced-motion:reduce) { .fade-in { opacity:1; transform:none; } .photo-card:hover { transform:none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-navy/97 backdrop-blur-sm shadow-lg">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="2.5" stroke-linecap="round"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+      </div>
+      <span class="text-white font-serif text-xl font-semibold tracking-wide">Jewel Dental</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html"        class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Home</a>
+      <a href="services.html"     class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Services</a>
+      <a href="implants.html"     class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Implants</a>
+      <a href="testimonials.html" class="text-gold text-sm font-medium border-b border-gold pb-0.5">Reviews</a>
+      <a href="contact.html"      class="text-white/80 hover:text-gold transition-colors text-sm font-medium">Contact</a>
+    </div>
+    <a href="tel:2243331113" class="hidden md:flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67 2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 13.92v3z"/></svg>
+      (224) 333-1113
+    </a>
+    <button id="menu-btn" class="md:hidden text-white p-2 cursor-pointer" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/20">
+    <div class="flex flex-col gap-4 pt-4 px-2">
+      <a href="index.html" class="text-white/80 text-sm">Home</a>
+      <a href="services.html" class="text-white/80 text-sm">Services</a>
+      <a href="implants.html" class="text-white/80 text-sm">Implants</a>
+      <a href="testimonials.html" class="text-gold text-sm">Reviews</a>
+      <a href="contact.html" class="text-white/80 text-sm">Contact</a>
+      <a href="tel:2243331113" class="bg-gold text-navy font-semibold text-sm px-5 py-3 rounded-full text-center">(224) 333-1113</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="bg-navy pt-32 pb-16 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Real Patients, Real Results</p>
+    <h1 class="text-white text-5xl md:text-6xl font-serif font-semibold mb-4">Patient Reviews</h1>
+    <p class="text-white/60 text-lg max-w-xl mx-auto">See what our patients say about their experience at Jewel Dental — and the results we've helped them achieve.</p>
+  </div>
+</section>
+
+<!-- WRITTEN TESTIMONIALS -->
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"I didn't want a screwed-in implant denture that was bulky and that's all I was offered everywhere else. Jewel Dental gave me my implant porcelain smile that actually feels like real teeth."</p>
+        <div class="font-semibold text-navy text-sm">Claudia T.</div>
+        <div class="text-gray-400 text-xs mt-1">Dental Implants</div>
+      </div>
+
+      <div class="bg-navy rounded-2xl p-7 fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-white/80 text-sm leading-relaxed italic mb-5">"Before, I was ashamed of showing my teeth. But now I smile so much more because of my new dental implants. I'm so thankful to have this team and my new teeth."</p>
+        <div class="font-semibold text-gold text-sm">Dorothy A.</div>
+        <div class="text-white/40 text-xs mt-1">Dental Implants</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"I was told I couldn't get my teeth fixed. They gave me a second chance with a tooth bridge. They're awesome."</p>
+        <div class="font-semibold text-navy text-sm">David M.</div>
+        <div class="text-gray-400 text-xs mt-1">Dental Bridge</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"They did such a great job. I get compliments all the time on my smile."</p>
+        <div class="font-semibold text-navy text-sm">Natalie P.</div>
+        <div class="text-gray-400 text-xs mt-1">Cosmetic Dentistry</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"My teeth were scary, I let them go. I didn't think they could fix them. The dental bridge looks phenomenal."</p>
+        <div class="font-semibold text-navy text-sm">Chris W.</div>
+        <div class="text-gray-400 text-xs mt-1">Dental Bridge</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"Estoy tan agradecida que encontré al Doctor Victor Sanz. Antes me dolía para comer, y ahora puedo disfrutar de todo. Gracias Jewel Dental!"</p>
+        <div class="font-semibold text-navy text-sm">Maria P.</div>
+        <div class="text-gray-400 text-xs mt-1">Implants · En Español</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm fade-in">
+        <div class="flex gap-1 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed italic mb-5">"I highly recommend Jewel Dental. They listen and do a great job. My fillings look completely real — I can't tell the difference."</p>
+        <div class="font-semibold text-navy text-sm">Joe T.</div>
+        <div class="text-gray-400 text-xs mt-1">General Dentistry</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER PHOTO GALLERY -->
+<section class="py-20 px-6 bg-cream">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 fade-in">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Photo Gallery</p>
+      <h2 class="text-navy text-4xl md:text-5xl font-serif font-semibold">Before & After Results</h2>
+      <p class="text-gray-500 mt-4 text-sm max-w-xl mx-auto">Real patient transformations from Jewel Dental. Results may vary.</p>
+    </div>
+    <div class="columns-2 sm:columns-3 lg:columns-4 gap-4 space-y-4">
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_e67a3295949e4a339adfe2d32901b75d.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_b81c0380c64947a58e241d2d1cdd16bf.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_b8e3b4ab9a3e4f6ea056d639d47ec952~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_ba87f0c5a15b40da9db9866a81e14e5d~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_497fb05768884cc6930c71b72db2579b.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_f676191389bd49d19b2f940d519b2c4d.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_ae01417dbae344cbaf9d896fe2290046~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_217ff62d136a48e1b8af57dd529261e8~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_bbad09564c9e4052ac94983eea3a0c83.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_d0985a047b56479f807cccd515e9a8c9.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_cd5778b88832445bb0ba924c68efbc1a~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_e530baa1185f4d4a9314242b6766954f~mv2.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_66c0ddb0ad594afd817d2c069828e9d6.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+      <div class="photo-card break-inside-avoid rounded-xl overflow-hidden shadow-sm cursor-pointer">
+        <img src="https://static.wixstatic.com/media/6b9715_22c389ab1f5445fd9650fe2a5623198c.jpg" alt="Patient smile result" class="w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-6 bg-navy">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <h2 class="text-white text-4xl font-serif font-semibold mb-4">Ready for Your Transformation?</h2>
+    <p class="text-white/60 mb-8">Join hundreds of happy patients who chose Jewel Dental in Schaumburg. Start with our $99 new patient special.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold px-10 py-5 rounded-full text-lg transition-colors cursor-pointer">
+      Book Your Appointment
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy border-t border-white/10 py-12 px-6 pb-24 md:pb-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0B2244" stroke-width="2.5" stroke-linecap="round"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+        </div>
+        <span class="text-white font-serif text-lg">Jewel Dental</span>
+      </div>
+      <div class="flex flex-wrap gap-6 text-sm text-white/50">
+        <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+        <a href="services.html" class="hover:text-gold transition-colors">Services</a>
+        <a href="implants.html" class="hover:text-gold transition-colors">Implants</a>
+        <a href="testimonials.html" class="hover:text-gold transition-colors">Reviews</a>
+        <a href="contact.html" class="hover:text-gold transition-colors">Contact</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-xs">
+      <div>© 2025 Jewel Dental. All rights reserved. · 1321 Tower Road Suite B, Schaumburg, IL 60173</div>
+      <div class="flex items-center gap-5">
+        <a href="tel:2243331113" class="hover:text-gold transition-colors">(224) 333-1113</a>
+        <a href="https://www.facebook.com/JewelDentalSchaumburg/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC9yBwh5tYnGxq8OldwCQJLQ" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0B2244"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-100 px-4 py-3 flex gap-3 shadow-lg">
+  <a href="tel:2243331113" class="flex-1 flex items-center justify-center gap-2 bg-navy text-white font-semibold text-sm py-3 rounded-xl">Call Now</a>
+  <a href="contact.html" class="flex-1 flex items-center justify-center gap-2 bg-gold text-navy font-semibold text-sm py-3 rounded-xl">Book Appointment</a>
+</div>
+
+<script>
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
